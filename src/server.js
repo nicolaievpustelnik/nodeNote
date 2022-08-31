@@ -9,7 +9,7 @@ app.set('port', process.env.PORT || 4000);
 app.set('views', path.join(__dirname, 'views'));
 
 // Middlewares
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 
 // Glabal variables
 
@@ -19,5 +19,7 @@ app.get('/', (req, res) => {
 });
 
 // Static files
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 module.exports = app;
